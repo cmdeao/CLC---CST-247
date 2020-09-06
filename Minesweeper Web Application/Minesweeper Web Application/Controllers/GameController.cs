@@ -41,6 +41,7 @@ namespace Minesweeper_Web_Application.Controllers
             if (squares[index].Bomb == 9)
             {
                 ViewBag.squares = squares;
+                Debug.WriteLine("GAME OVER");
                 return View("Loser");
             }
             else
@@ -64,8 +65,9 @@ namespace Minesweeper_Web_Application.Controllers
                 return View("Winner");
             }
 
-            return PartialView("_UpdateGame", squares);
+            Debug.WriteLine("RETURNING PARTIAL VIEW");
+            //return PartialView("_UpdateGame", squares);
+            return PartialView("TestingGame", squares);
         }
-
     }
 }

@@ -8,10 +8,9 @@
     <meta name="viewport" content="width=device-width" />
 </head>
 <body>
-
-    <div name="updateInfo ">
-        @Html.Partial("~/Views/Shared/_UpdateGame.cshtml", Model)
-    </div>
-   
 </body>
 </html>
+
+<div id="updateInfo">
+    @{Html.RenderPartial("TestingGame", Model);}
+</div>
