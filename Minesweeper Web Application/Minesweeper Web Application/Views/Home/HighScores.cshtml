@@ -1,4 +1,5 @@
-﻿
+﻿@model List<Minesweeper_Web_Application.Models.LeaderBoard>
+
 @{
     ViewBag.Title = "High Scores";
 }
@@ -27,6 +28,19 @@
             text-align: center;
             width: 300px;
         }
+
+        tr:nth-child(2) 
+        {
+            background-color: gold;
+        }
+        tr:nth-child(3)
+        {
+            background-color: silver;
+        }
+        tr:nth-child(4)
+        {
+            background-color: #cd7f32;
+        }
     </style>
 </head>
 @using (Html.BeginForm("MainPage", "Home", FormMethod.Get))
@@ -44,12 +58,29 @@
     <br />
     @Html.Label("High Scores Leaderboard", htmlAttributes: new { @class = "subHeaderText" })
     <div>
-        <table>
+
+        <!-- updated CSS styling -->
+        <style>
+            table, th {
+                border: 5px solid black;
+            }
+        </style>
+
+        <table style="background-color: lightcyan; border: 5px solid black;">
             <tr>
                 <th scope="col">Rank</th>
                 <th scope="col">Username</th>
-                <th scope="col">Score</th>
+                <th scope="col">Score - Seconds</th>
             </tr>
+
+            @foreach (var data in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => data.Rank)</td>
+                    <td>@Html.DisplayFor(modelItem => data.Username)</td>
+                    <td>@Html.DisplayFor(modelItem => data.Time)</td>
+                </tr>
+            }
         </table>
     </div>
 </div>
