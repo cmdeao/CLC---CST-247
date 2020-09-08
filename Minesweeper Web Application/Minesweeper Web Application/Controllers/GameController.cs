@@ -49,6 +49,7 @@ namespace Minesweeper_Web_Application.Controllers
             if (squares[index].Bomb == 9)
             {
                 ViewBag.squares = squares;
+                Debug.WriteLine("GAME OVER");
                 return View("Loser");
             }
             else
@@ -82,8 +83,11 @@ namespace Minesweeper_Web_Application.Controllers
                 return View("Winner");
             }
 
-            return PartialView("_UpdateGame", squares);
+            Debug.WriteLine("RETURNING PARTIAL VIEW");
+            //return PartialView("_UpdateGame", squares);
+            return PartialView("TestingGame", squares);
         }
+<<<<<<< HEAD
 
 <<<<<<< .merge_file_a03584
 =======
@@ -93,5 +97,7 @@ namespace Minesweeper_Web_Application.Controllers
             return View("Game");
         }
 >>>>>>> .merge_file_a05104
+=======
+>>>>>>> ce2cdd48838af9f1214b3b9a27f90acb04c11a7f
     }
 }
