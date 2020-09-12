@@ -30,12 +30,8 @@ namespace Minesweeper_Web_Application.Controllers
             board = new GameBoardModel(squares, row, col);
             board.PlaceBombs(squares, numofBombs);
             board.BombToString(squares);
-<<<<<<< .merge_file_a03584
+            ViewBag.squares = squares;
             return View("Game", squares);
-=======
-            Debug.WriteLine(startTime);
-            return View("Game");
->>>>>>> .merge_file_a05104
         }
         [HttpPost]
         public ActionResult OnButtonClick(string mine)
@@ -87,17 +83,10 @@ namespace Minesweeper_Web_Application.Controllers
             //return PartialView("_UpdateGame", squares);
             return PartialView("TestingGame", squares);
         }
-<<<<<<< HEAD
-
-<<<<<<< .merge_file_a03584
-=======
         //Added this so we have it to post a flag on a right-click of an open space
         public ActionResult OnButtonRightClick(string flagSpace)
         {
             return View("Game");
         }
->>>>>>> .merge_file_a05104
-=======
->>>>>>> ce2cdd48838af9f1214b3b9a27f90acb04c11a7f
     }
 }
