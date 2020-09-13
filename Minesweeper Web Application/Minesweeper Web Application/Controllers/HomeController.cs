@@ -17,6 +17,7 @@ namespace Minesweeper_Web_Application.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            Debug.WriteLine("Temp comment");
             return View("/Views/Login/Login.cshtml");
         }
 
