@@ -32,6 +32,7 @@ namespace Minesweeper_Web_Application.Controllers
 
         public ActionResult Index()
         {
+            Debug.WriteLine("TEMP OUTPUT");
             MineSweeperLogger.GetInstance().Info(String.Format("{0} has started a game.", UserManagement.Instance._loggedUser.UserName));
             startTime = DateTime.Now;
             squares = new List<GameSquareModel>();
